@@ -10,7 +10,7 @@ import {
    TouchableHighlight
 } from 'react-native'
 
-export default class HomeContainer extends Component {
+export default class LoginScreen extends Component {
    constructor(props) {
       super(props);
       this.state  = {username: '',
@@ -20,13 +20,13 @@ export default class HomeContainer extends Component {
       return (
          <View style={styles.container}>
             <TextInput
-             style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+             style={styles.textInput}
              placeholder = "Username"
              onChange={(event) => this.setState({username:event.nativeEvent.text})}
              value = {this.state.username}>
             </TextInput>
             <TextInput
-               style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+               style={styles.textInput}
                placeholder = "Password"
                onChange={(event) => this.setState({password:event.nativeEvent.text})}
                value = {this.state.password}>
@@ -70,5 +70,12 @@ export default class HomeContainer extends Component {
       padding: 10,
       borderColor: 'black',
       marginTop: 5
+   },
+   textInput: {
+     textAlign: 'center',
+     height: 40,
+     width: 150,
+     borderColor: 'gray',
+     borderWidth: 1
    }
  });

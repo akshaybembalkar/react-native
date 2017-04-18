@@ -23,9 +23,8 @@ export default class HomeContainer extends Component {
                'Choose from list',
                null,
                [
-                 {text: 'Color Screen'},
                  {text: 'Login Screen',onPress: () => this.goToAbout()},
-
+                 {text: 'Login Screen',onPress: () => this.goToColor()},
                ]
              )}>
               Click Here
@@ -60,6 +59,13 @@ export default class HomeContainer extends Component {
       this.props.navigator.push({
          name: 'About',
          title: 'About',
+         openMenu: this.openMenu
+      });
+   }
+   goToColor = () => {
+      this.props.navigator.push({
+         name: 'color',
+         title: 'color',
          openMenu: this.openMenu
       });
    }
